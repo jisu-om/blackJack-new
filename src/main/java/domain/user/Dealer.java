@@ -1,21 +1,16 @@
 package domain.user;
 
+import domain.Constants;
 import domain.card.Card;
+import domain.card.Cards;
 
-import java.util.ArrayList;
-import java.util.List;
+public class Dealer extends User {
 
-/**
- * 게임 딜러를 의미하는 객체
- */
-public class Dealer {
-    private final List<Card> cards = new ArrayList<>();
-
-    public Dealer() {}
-
-    public void addCard(Card card) {
-        cards.add(card);
+    public Dealer() {
+        super();
     }
 
-    // TODO 추가 기능 구현
+    public boolean needsDraw() {
+        return getTotalScore() <= Constants.DEALER_DRAW_THRESHOLD;
+    }
 }

@@ -15,7 +15,7 @@ public enum Symbol {
     QUEEN(10),
     KING(10);
 
-    private int score;
+    private final int score;
 
     Symbol(int score) {
         this.score = score;
